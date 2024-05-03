@@ -1,0 +1,49 @@
+---
+import { SEO } from "astro-seo";
+
+import AppHeader from "../components/AppHeader.astro";
+import AppFooter from "../components/AppFooter.astro";
+import Container from "../components/Container.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <SEO title={title} description="Redecouvrez le pays bamileke" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <AppHeader />
+    <div class="relative">
+      <Container>
+        <slot />
+      </Container>
+    </div>
+    <AppFooter />
+    <style>
+      html {
+        font-family: Urbanist, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
