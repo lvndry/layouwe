@@ -56,7 +56,9 @@ const { title, id } = Astro.props;
           </div>
         </div>
         <div class="relative pt-36 ml-auto">
-          <slot />
+          <Container>
+            <slot />
+          </Container>
         </div>
       </Container>
     </main>
