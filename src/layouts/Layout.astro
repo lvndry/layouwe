@@ -7,6 +7,7 @@ import Container from "../components/Container.astro";
 
 interface Props {
   title: string;
+  id: string;
 }
 
 const { title } = Astro.props;
@@ -39,11 +40,26 @@ const { title } = Astro.props;
   </head>
   <body class="bg-white dark:bg-gray-900">
     <AppHeader />
-    <div class="relative">
+    <main class="space-y-20 mb-40">
       <Container>
-        <slot />
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+        >
+          <div
+            class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
+          >
+          </div>
+          <div
+            class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+          >
+          </div>
+        </div>
+        <div class="relative pt-36 ml-auto">
+          <slot />
+        </div>
       </Container>
-    </div>
+    </main>
     <AppFooter />
     <style>
       html {
