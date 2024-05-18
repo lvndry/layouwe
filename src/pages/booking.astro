@@ -1,7 +1,20 @@
 ---
+import { Image } from "astro:assets";
+import WhatsappQRCode from "../assets/images/whatsapp-qr-code.png";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Reserver votre voyage" id="booking">
-  <div>Reservé directement sur notre Whatsapp</div>
+  <div>
+    <p>Reservez directement sur notre Whatsapp</p>
+
+    <div class="flex justify-center">
+      <div>
+        <span>Scannez le QR Code</span>
+        <Image src={WhatsappQRCode} alt="Layouwe Whatsapp QR Code" />
+        <p>ou</p>
+        <p>Contactez nous au <b>+237 6 82 49 62 10</b></p>
+      </div>
+    </div>
+  </div>
 </Layout>
