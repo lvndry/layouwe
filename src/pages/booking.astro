@@ -5,14 +5,17 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Reserver votre voyage" id="booking">
-  <div>
+  <div class="text-gray-600 dark:text-gray-300">
     <p>Reservez directement sur notre Whatsapp</p>
-
     <div class="flex justify-center">
       <div>
         <span>Scannez le QR Code</span>
-        <Image src={WhatsappQRCode} alt="Layouwe Whatsapp QR Code" />
-        <p>ou</p>
+        <Image
+          class="my-3"
+          src={WhatsappQRCode}
+          alt="Layouwe Whatsapp QR Code"
+        />
+        <p class="my-3">ou</p>
         <p>Contactez nous au <b>+237 6 82 49 62 10</b></p>
       </div>
     </div>
